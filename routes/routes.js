@@ -22,7 +22,7 @@ router.patch('/update/:id', (req, res) => {
 });
 
 //Delete by ID Method
-router.delete('/delte/:id', (req, res) => {
+router.delete('/delete/:id', (req, res) => {
     res.delete('Delete by ID API')
 });
 
