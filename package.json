@@ -1,0 +1,20 @@
+{
+  "name": "rest-api-express-mongo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuisBalan/diverse-express-projects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuisBalan/diverse-express-projects/issues"
+  },
+  "homepage": "https://github.com/LuisBalan/diverse-express-projects#readme"
+}
