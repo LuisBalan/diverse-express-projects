@@ -1,10 +1,14 @@
 //invoke dependencies and packages
+require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-require('dotenv').config();
 const databaseURL = process.env.DB_URI;
-const routes = require('./routes/index');
+const routes = require('./routes/routes');
 
+//declare an instance of express (starts a new application)
+const app = express();
+
+//this is the base endpoint
 app.use('/api', routes);
 
 
@@ -21,8 +25,6 @@ const database = mongoose.connection;
     });
 
 
-//declare an instance of express
-const app = express();
 
 //middleware that parses incoming requests
 app.use(express.json());
