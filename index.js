@@ -1,8 +1,12 @@
 //invoke dependencies and packages
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const databaseURL = process.env.DB_URI;
+const routes = require('./routes/index');
+
+app.use('/api', routes);
+
 
 mongoose.connect(databaseURL);
 const database = mongoose.connection;
