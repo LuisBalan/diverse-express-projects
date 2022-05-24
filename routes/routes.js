@@ -4,6 +4,11 @@ const Model = require('../model/model')
 
 // Post Method
 router.post('/post', (req, res) => {
+    const data = new Model({
+        name: req.body.name,
+        age: req.body.age
+    });
+    
     res.send('Post API')
 });
 
