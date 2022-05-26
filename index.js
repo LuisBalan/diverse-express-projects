@@ -1,7 +1,6 @@
 //invoke dependencies and packages
 require('dotenv').config();
 const bodyParser = require('body-parser');
-const { urlencoded } = require('express');
 const express = require('express');
 const mongoose = require('mongoose');
 const databaseURL = process.env.DB_URI;
