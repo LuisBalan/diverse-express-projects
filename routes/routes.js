@@ -3,24 +3,32 @@ const router = express.Router();
 const Model = require('../model/model')
 
 // Post Method
-router.post('/post', (req, res) => {
+router.post('/post', async (req, res) => {
     const data = new Model({
         name: req.body.name,
         age: req.body.age
     });
 
     try{
-        const dataToSave = data.save();
+        const dataToSave = await data.save();
         res.status(200).json(dataToSave);
-    }catch(error){
-        res.status(400).json({error: error.message});
     }
+    catch(error){
+        res.status(400).json({message: error.message});
+    };
     
-    res.send('Post API')
+    //res.send('Post API')
 });
 
+
 //Get all Method
-router.get('/getAll', (req, res) => {
+router.get('/getAll', async (req, res) => {
+    // try{
+    //     const data = await Model.find();
+    //     res.json(data)
+    // }catch(error){
+    //     res.status(500).json({message: error.message})
+    // };
     res.send('Get All API')
 });
 
