@@ -37,7 +37,7 @@ router.get('/getAll', async (req, res) => {
 //Get by ID Method
 router.get('/getOne/:id', async (req, res) => {
     try{
-        const data = await Model.findById(req.params.id);
+        const data = await Model.findById({_id: req.params.id});
         res.json(data);
     }
     catch(error){
@@ -48,8 +48,22 @@ router.get('/getOne/:id', async (req, res) => {
 });
 
 //Update by ID Method
-router.patch('/update/:id', (req, res) => {
-    res.send('Update by ID API')
+router.patch('/update/:id', async (req, res) => {
+    try{
+        const id = req.params.id;
+        const updatedData = req.body;
+        const options = {new: true};
+        
+        const result = await Model.findByIdAndUpdate(
+            id, updatedData, options
+        );
+        
+        res.send(result);
+    }
+    catch(error){
+        res.status(400).json({message: error.message});
+    }
+    //res.send('Update by ID API')
 });
 
 //Delete by ID Method
