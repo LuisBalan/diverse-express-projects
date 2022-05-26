@@ -5,6 +5,9 @@ const dataSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    lastName: {
+        type: String
+    },
     age: {
         required: true,
         type: Number
