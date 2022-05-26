@@ -38,14 +38,14 @@ router.get('/getAll', async (req, res) => {
 //Get by ID Method
 router.get('/getOne/:id', async (req, res) => {
     try{
-        const data = await Model.findById({_id: req.params.id});
+        const data = await Model.findById(req.params.id);
         res.json(data);
     }
     catch(error){
         res.status(500).json({message: error.message})
     };
 
-    res.send('Get by ID API')
+    //res.send('Get by ID API')
 });
 
 //Update by ID Method
