@@ -53,7 +53,7 @@ router.patch('/update/:id', async (req, res) => {
         const id = req.params.id;
         const updatedData = req.body;
         const options = {new: true};
-        
+
         const result = await Model.findByIdAndUpdate(
             id, updatedData, options
         );
@@ -67,8 +67,17 @@ router.patch('/update/:id', async (req, res) => {
 });
 
 //Delete by ID Method
-router.delete('/delete/:id', (req, res) => {
-    res.delete('Delete by ID API')
+router.delete('/delete/:id', async (req, res) => {
+    try{
+        const id = req.params.id;
+        const data = await Model.findByIdAndDelete(id);
+        res.send(`Document with ${data.name} name has been deleted...`)
+    }
+    catch(error){
+        res.json({message: error.message});
+    };
+    
+    //res.delete('Delete by ID API')
 });
 
 
