@@ -6,6 +6,7 @@ const Model = require('../model/model')
 router.post('/post', async (req, res) => {
     const data = new Model({
         name: req.body.name,
+        lastName: req.body.lastName,
         age: req.body.age
     });
 
