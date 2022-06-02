@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 //this is the base endpoint
 app.use('/api', routes);
 
-
-mongoose.connect(databaseURL);
+//mongoose.connect(databaseURL);
+mongoose.connect('mongodb+srv://LuisBalan:06AjroGw5XXyKjqQ@cluster0.rekoi.mongodb.net/?retryWrites=true&w=majority');
 const database = mongoose.connection;
     
 //declaring error to handle if connection fails
