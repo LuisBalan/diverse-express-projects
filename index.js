@@ -34,5 +34,5 @@ const database = mongoose.connection;
 //comment
 
 app.listen(PORT, () => {
-    console.log('Server started at 3000');
+    console.log(`Server started at http://localhost:${PORT}`);
 });
