@@ -16,35 +16,34 @@ console.log(artistName.value, artistLastName.value, artistAge.value);
 
 const postNewItem = () => {
 
+    let bodyRequest;
     const xhr = new XMLHttpRequest();
     console.log(xhr)
-    
+    xhr.onload = () => {console.log("ready!")}
     xhr.addEventListener("readystatechange", () => {
          console.log(xhr.readyState)
          console.log(xhr.status)
          if(xhr.readyState === 4 && xhr.status === 200){
              console.log(xhr);
 
-            //  const bodyRequest = {
-            //      name: artistName.value,
-            //      lastName: artistLastName.value,
-            //      age: artistAge.value
-            //  };
-            xhr.open("POST", urlPOST, true)
-            xhr.send(JSON.stringify({
-                    name: artistName.value,
-                    lastName: artistLastName.value,
-                    age: artistAge.value
-                }));    
-
+            bodyRequest = {
+                 name: artistName.value,
+                 lastName: artistLastName.value,
+                 age: artistAge.value
+             };
+             console·log(bodyRequest);
+             
             }else{
                 console.error('An error ocurried!');
             };
         });
 
+        console.log(bodyRequest)
+        xhr.open("POST", urlPOST, true)
+        xhr.send(JSON.stringify(bodyRequest));    
 };
 
-submitButton.addEventListener("click", postNewItem());
+submitButton.addEventListener("click", postNewItem);
 
 
 
