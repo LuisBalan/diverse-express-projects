@@ -5,6 +5,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const databaseURL = process.env.DB_URI;
 const routes = require('./routes/routes');
+const PORT = process.env.PORT || 3000;
 
 //declare an instance of express (starts a new application)
 const app = express();
@@ -32,6 +33,6 @@ const database = mongoose.connection;
 
 //comment
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
     console.log('Server started at 3000');
 });
