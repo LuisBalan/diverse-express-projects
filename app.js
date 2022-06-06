@@ -44,7 +44,7 @@ const postNewItem = () => {
 
 };
 
-submitButton.addEventListener("click", postNewItem);
+submitButton.addEventListener("click", postNewItem());
 
 
 
