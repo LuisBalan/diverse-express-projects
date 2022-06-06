@@ -2,7 +2,7 @@ const artistName = document.getElementById('name-input');
 const artistLastName = document.getElementById('last-name-input');
 const artistAge = document.getElementById('age-input');
 const submitButton = document.getElementById('submit-button');
-const urlPOST = "localhost:3000/api/post/";
+const urlPOST = "https://myeducationalproject01.uc.r.appspot.com/api/getAll";
 
 console.log(artistName.value, artistLastName.value, artistAge.value);
 
