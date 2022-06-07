@@ -1,4 +1,3 @@
-//import 'fetch';
 const artistName = document.getElementById("name-input");
 const artistLastName = document.getElementById("last-name-input");
 const artistAge = document.getElementById("age-input");
