@@ -32,6 +32,7 @@ const urlPOST = "https://myeducationalproject01.uc.r.appspot.com/api/post";
         })
         .then(response => response.json())
         .then(json => console.log(json))
+        .then(setTimeout(() => alert(`New element succesfully submitted!`), 1000))
         .catch(err => console.log(err));
 };
 
