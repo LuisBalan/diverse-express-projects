@@ -44,7 +44,13 @@ const urlPOST = "https://myeducationalproject01.uc.r.appspot.com/api/post";
         })
         .then(response => response.json())
         .then(json => console.log(json))
-        .then(setTimeout(() => alert(`New element succesfully submitted!`), 1000))
+        //.then(setTimeout(() => {alert("New element successfully submitted!")}, 1000))  //this is correct in functionality
+        .then(setTimeout(() => {alert("New element successfully submitted!", window.location.href = "../views/all_legends.html")}, 1000))
+        ///.then(setTimeout(() => {alert("New element succesfully submitted!", window.location.href ="../views/all_legends.html")}, 800))
+        //.then(alert("New element succesfully submitted!"))
+        
+        //.then(window.location=("../views/all_legends.html"))   fix for extra-functionality
+        //
         .catch(err => console.log(err));
 };
 
