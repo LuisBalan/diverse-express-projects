@@ -4,12 +4,15 @@ const artistsContainer = document.getElementById("legends-cards-container");
 const loadLegends = (e) => {
     e.preventDefault();
     
-    const displayLegends = (legendArray) => {
+    const displayLegends = (data) => {
+        console.log(data)
         let legendsContainer = document.createElement("ul");
-        legendArray.map((item) => {
+        data.map((item) => {
             const li = document.createElement("li");
-            const textNode = document.createTextNode(`Legend: ${item.name} ${item.lastName}\nAge: ${item.age}`);
-            li.appendChild(textNode);
+            const a = document.createElement("a");
+            const textNode = document.createTextNode(`Legend: ${item.name} ${item.lastName}, Age: ${item.age}`);
+            a.append(textNode)
+            li.appendChild(a);
             legendsContainer.appendChild(li);
         });
         artistsContainer.appendChild(legendsContainer);
@@ -20,20 +23,7 @@ const loadLegends = (e) => {
             method: "GET"
         })
         .then(response => response.json())
-        //.then(json => console.log(json))
-        .then(data => {
-            console.log(data)
-            let legendsContainer = document.createElement("ul");
-            data.map((item) => {
-                const li = document.createElement("li");
-                const textNode = document.createTextNode(`Legend: ${item.name} ${item.lastName}\nAge: ${item.age}`);
-                li.appendChild(textNode);
-                legendsContainer.appendChild(li);
-            });
-            artistsContainer.appendChild(legendsContainer);
-        })
-        //.then(data => data.map(item => console.log(item)))
-        //.then(data => displayLegends(data));
+        .then(data => displayLegends(data));
 }
 
 window.onload = loadLegends;
