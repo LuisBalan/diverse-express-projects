@@ -1,9 +1,13 @@
 const artistName = document.getElementById("name-input");
 const artistLastName = document.getElementById("last-name-input");
 const artistAge = document.getElementById("age-input");
+
+//const artistsContainer = document.getElementsByClassName("legends-cards-container");
+
+
 const submitButton = document.getElementById("submit-button");
 const urlPOST = "https://myeducationalproject01.uc.r.appspot.com/api/post";
-const urlGetAll = 'https://myeducationalproject01.uc.r.appspot.com/api/getAll';
+
 
 
 // const getNameValue = () => {
@@ -14,12 +18,13 @@ const urlGetAll = 'https://myeducationalproject01.uc.r.appspot.com/api/getAll';
         
         // getNameValue()
     
-    const getAllLegends = () => {
-        fetch(urlGetAll, {
-            method: "GET",
-            
-        })
-    }
+    // const getAllLegends = () => {
+    //     fetch(urlGetAll, {
+    //         method: "GET"
+    //     })
+    //     .then(response => console.log(response))
+    //     .catch(error => console.log(error))
+    // }
         
         
     const postNewItem = async (e) => {
