@@ -40,6 +40,6 @@ const loadLegends = (e) => {
         })
         .then(response => response.json())
         .then(data => displayLegends(data));
-}
+};
 
 window.onload = loadLegends;
