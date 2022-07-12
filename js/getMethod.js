@@ -21,7 +21,8 @@ const displayLegends = (data) => {
         a.href = "./legend_detail.html";
         a.addEventListener('click', e => {
             e.preventDefault();
-            localStorage.setItem(`${item._id}`, JSON.stringify(item));
+            sessionStorage.clear();
+            sessionStorage.setItem(`${item._id}`, JSON.stringify(item));
             window.location.href = `./legend_detail.html?legend=${item.name}${item.lastName}`;
         });
         li.appendChild(a);
@@ -30,7 +31,7 @@ const displayLegends = (data) => {
     artistsContainer.appendChild(legendsContainer); 
 }
 
-console.log(localStorage.length)
+console.log(sessionStorage.length)
 
 //request to DB
 const loadLegends = (e) => {
