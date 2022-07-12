@@ -21,9 +21,9 @@ const displayLegends = (data) => {
         a.href = "./legend_detail.html";
         a.addEventListener('click', e => {
             e.preventDefault();
-            localStorage.setItem('legendsData', JSON.stringify(data));
+            localStorage.setItem(`${item._id}`, JSON.stringify(item));
             window.location.href = `./legend_detail.html?legend=${item.name}${item.lastName}`;
-        })
+        });
         li.appendChild(a);
         legendsContainer.appendChild(li);
     });
