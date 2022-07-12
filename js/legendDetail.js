@@ -1,8 +1,8 @@
 
 
 const urlGetById = 'https://myeducationalproject01.uc.r.appspot.com/api/getOne';
-const editButton = document.getElementById("edit-button");
-const updateButton = document.getElementById("edit-anchor");
+//const editButton = document.getElementById("edit-button");
+const updateButton = document.getElementById("update-button");
 
 // get from sessionStorage
 //console.log(typeof sessionStorage, sessionStorage)
@@ -58,20 +58,16 @@ const loadOneLegend = (e) => {
 
 const changeToUpdatePage = () => {
     //e.preventDefault();
-    window.location.href = `./update.html?update=${legendId}`;
+    //updateButton.href = "./update.html"
+    window.location.href = `./update.html`;
 }
 
-editButton.addEventListener("click", e => {
+updateButton.addEventListener('click', e => {
     e.preventDefault();
-    changeToUpdatePage;
-})
-// const updateLegend = (e) => {
-//     e.preventDefault();
-//     fetch(urlGetById + `/${legendId}`, {
-//         method: "PATCH"
-//     })
-//};
+    updateButton.href = './update.html'
+    window.location.href = `./update.html?update=${legendData._id}`;
 
+})
 
 
 
